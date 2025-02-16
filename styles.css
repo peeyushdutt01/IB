@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+/* General Chat Styles */
+body {
+  font-family: Arial, sans-serif;
+  /* Use a clean, sans-serif font */
+  background-color: #f8f8f9;
+  /* Soft light background similar to Rufus */
+  margin: 0;
+  padding: 0;
+}
+
+.chat-wrapper {
+  display: flex;
+  margin-bottom: 15px;
+  animation: fadeIn 0.3s ease-out;
+  /* Smooth appearance for chat bubbles */
+}
+
+/* Animation for chat bubbles */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chat Bubble Styling */
+.chat-bubble {
+  padding: 12px 16px;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 14px;
+  background: rgba(0, 91, 179, 0.1);
+  /* Transparent blue effect mimicking Rufus */
+  backdrop-filter: blur(8px);
+  /* Blurred background behind chat bubbles */
+  font-weight: 600;
+}
+
+/* User-specific styling */
+.chat-wrapper.user {
+  justify-content: flex-end;
+  /* Align user messages to the right */
+}
+
+.chat-wrapper.user .chat-icon {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  /* Increased size for the icon */
+  height: 40px;
+  /* Increased size for the icon */
+  background-color: transparent;
+  /* Blue background for user icon */
+  color: white;
+  border-radius: 50%;
+  /* Circle icon */
+  font-size: 22px;
+  /* Increased font size for the icon */
+  transition: transform 0.3s ease;
+  /* Smooth hover effect */
+}
+
+.chat-wrapper.user .chat-icon:hover {
+  transform: scale(1.1);
+  /* Slight zoom effect on hover */
+}
+
+.chat-wrapper.user .chat-bubble {
+  background-color: rgb(36, 125, 221);
+  /* Light blue tint with slight transparency */
+  color: #000000;
+  /* Black text for better contrast */
+  border: 1px solid #a5e3ec;
+  /* Soft blue border to match the bluish theme */
+  border-radius: 30px;
+  /* Rounded corners */
+  backdrop-filter: blur(20px);
+  /* Blur effect behind the assistant bubble */
+  padding: 12px 16px;
+  /* Consistent padding for bubbles */
+  max-width: 70%;
+  /* Limiting max width of the bubble */
+  word-wrap: break-word;
+  /* Ensure long words break inside the bubble */
+  text-align: left;
+}
+
+/* Assistant-specific styling */
+.chat-wrapper.assistant {
+  justify-content: flex-start;
+  /* Align assistant messages to the left */
+}
+
+.chat-wrapper.assistant .chat-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  /* Increased size for the icon */
+  height: 40px;
+  /* Increased size for the icon */
+  background-color: transparent;
+  /* Warm yellow background for assistant icon */
+  color: white;
+  border-radius: 50%;
+  /* Circle icon */
+  font-size: 22px;
+  /* Increased font size for the icon */
+  transition: transform 0.3s ease;
+  /* Smooth hover effect */
+}
+
+.chat-wrapper.assistant .chat-icon:hover {
+  transform: scale(1.1);
+  /* Slight zoom effect on hover */
+}
+
+.chat-wrapper.assistant .chat-bubble {
+  background-color: rgb(175, 234, 252);
+  /* Light blue tint with slight transparency */
+  color: #000000;
+  /* Black text for better contrast */
+  border: 1px solid #50e8ff;
+  /* Soft blue border to match the bluish theme */
+  border-radius: 30px;
+  /* Rounded corners */
+  backdrop-filter: blur(8px);
+  /* Blur effect behind the assistant bubble */
+  padding: 12px 16px;
+  /* Consistent padding for bubbles */
+  max-width: 70%;
+  /* Limiting max width of the bubble */
+  word-wrap: break-word;
+  /* Ensure long words break inside the bubble */
+}
+
+/* Simple and Minimal Title for InfoBot with New Color */
+.main-title {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  background-clip: text;
+  font-weight: 600;
+  /* Slightly bold for a professional look */
+  font-size: 70px;
+  /* Larger size for strong impact */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), 0 0 20px rgba(150, 150, 150, 0.6);
+  /* Soft shadow with a neutral glow */
+  animation: fadeInScale 1.2s ease-out forwards;
+  /* Elegant fade-in and scale-up animation */
+  cursor: pointer;
+}
+
+/* Animation for title fading in and scaling */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+    /* Start slightly smaller */
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    /* End at normal size */
+  }
+}
+
+/* Subtitle Styling */
+.sub-title {
+  text-align: center;
+  color: #6b6b6b;
+  /* Soft gray color */
+  font-size: 24px;
+  /* Slightly larger subtitle */
+  margin-bottom: 40px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Subtitle Underline Animation */
+.sub-title::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: #20e1ff;
+  /* Blue underline */
+  transition: width 0.3s ease;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sub-title:hover::after {
+  width: 100%;
+  /* Expand underline on hover */
+}
+
+/* Subtitle text shadow */
+.sub-title {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  /* Light shadow for depth */
+}
+
+/* Dots Animation for Typing Indicator */
+.typing-indicator {
+  display: inline-block;
+  margin-left: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #05ceed;
+  border-radius: 50%;
+  opacity: 0;
+  animation: dot-blink 1.5s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Animation for Typing Dots */
+@keyframes dot-blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Additional Styles for Input */
+.chat-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  margin-top: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  /* Smooth transition on focus */
+}
+
+.chat-input:focus {
+  border-color: #20e1ff;
+  /* Change border color on focus */
+  outline: none;
+}
+
+/* Chat Interface Responsiveness */
+
+/* For tablets, laptops, and mobile devices */
+@media (max-width: 1024px) {
+  .chat-wrapper {
+    margin-bottom: 10px;
+    /* Reduce margin for smaller screens */
+  }
+
+  .chat-bubble {
+    max-width: 85%;
+    /* Adjust max-width for better readability on tablets */
+  }
+
+  .chat-wrapper.user .chat-bubble,
+  .chat-wrapper.assistant .chat-bubble {
+    font-size: 14px;
+    /* Adjust font size for tablet and laptops */
+  }
+
+  .main-title {
+    font-size: 48px;
+    /* Slightly smaller title for tablets */
+  }
+
+  .sub-title {
+    font-size: 20px;
+    /* Adjust subtitle size for tablets */
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .chat-wrapper {
+    align-items: normal;
+  }
+
+  .chat-bubble {
+    max-width: 90%;
+    /* Reduce max width on smaller screens */
+  }
+
+  .chat-wrapper.user .chat-bubble,
+  .chat-wrapper.assistant .chat-bubble {
+    font-size: 13px;
+    /* Slightly smaller font size on mobile */
+    padding: 10px 14px;
+    /* Adjust padding for mobile */
+  }
+
+  .chat-icon {
+    margin: 5px 0;
+  }
+
+  .main-title {
+    font-size: 40px;
+    /* Adjust title size for mobile */
+  }
+
+  .sub-title {
+    font-size: 18px;
+    /* Adjust subtitle size for mobile */
+  }
+}
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+  .chat-wrapper {
+    margin: 5px 0;
+    /* Reduce spacing between chat bubbles */
+  }
+
+  .chat-bubble {
+    max-width: 95%;
+    /* Almost full width for better mobile readability */
+  }
+
+  .chat-wrapper.user .chat-bubble,
+  .chat-wrapper.assistant .chat-bubble {
+    font-size: 12px;
+    /* Reduce font size for very small screens */
+  }
+
+  .main-title {
+    font-size: 35px;
+    /* Smaller title size */
+    margin-bottom: 15px;
+    /* Reduce bottom margin for very small screens */
+  }
+
+  .sub-title {
+    font-size: 16px;
+    /* Adjust subtitle size for very small screens */
+  }
+
+  .chat-icon {
+    font-size: 18px;
+    /* Make icons slightly smaller */
+  }
+}
+
+.stButton > button {
+  padding: 12px 16px;
+  /* Adjust padding */
+  border: 1px solid #ffffff;
+  /* Add border */
+  border-radius: 30px;
+  /* Make the button round */
+  width: 140px;
+  /* Adjust widtrh */
+  height: 40px;
+  /* Adjust height */
+  font-size: 20px;
+  /* Adjust font size for the emoji */
+  background-color: #00253a;
+  /* Change button background color */
+  color: #ffffff;
+  cursor: pointer;
+  /* Change cursor to pointer */
+  margin-left: auto 8%;
+}
+
+.stButton > button:hover {
+  color: rgb(5, 255, 101);
+  border-color: white;
+}

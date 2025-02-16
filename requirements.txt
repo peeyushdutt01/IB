@@ -1,0 +1,17 @@
+langchain_openai
+langchain_core
+python-dotenv
+streamlit
+langchain_community
+langserve
+fastapi
+uvicorn
+deep-translator
+langchain_groq
+langchain-chroma
+chromadb==0.5.18
+ragas
+speechrecognition
+langchain-groq
+groq
+tf-keras
